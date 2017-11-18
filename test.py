@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """Binarize (make it black and white) an image with Pyhton."""
-
+import colorsys
 from PIL import Image
 from scipy.misc import imsave
 import numpy
@@ -11,6 +11,7 @@ import numpy
 def binarize_image(img_path, target_path, threshold):
     """Binarize an image."""
     image_file = Image.open(img_path)
+    image = colorsys.rgb_to_hsv(359,1,1)
     image = image_file.convert('L')  # convert image to monochrome
     image = numpy.array(image)
     image = binarize_array(image, threshold)
