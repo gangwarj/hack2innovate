@@ -1,0 +1,2 @@
+import Image
+im = Image.open('ImportError: cannot import name 'imread'')
